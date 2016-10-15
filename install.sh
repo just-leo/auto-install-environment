@@ -107,6 +107,7 @@ if [ -d "node-v0.12.16" ]; then
     make install
     popd
     echo -e "\n--- Installing javascript components ---\n"
+    chown -R ${username} $(npm config get prefix)/{lib/node_modules,bin,share}
     npm install -g gulp forever > /dev/null 2>&1
 fi
 # old way
